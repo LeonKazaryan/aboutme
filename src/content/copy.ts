@@ -9,6 +9,7 @@ export const links = {
   chathut: "https://chathut-presentation.vercel.app",
   raillens: "https://github.com/LeonKazaryan/railway",
   preggo: "https://hipreggo.vercel.app",
+  surakVideoId: "zqGKsbjdvV0",
 };
 
 export const stageIds = [
@@ -242,9 +243,96 @@ export const en = {
       skyline: "Warsaw from above, 21 May",
     },
   },
+  surak: {
+    name: "1surak",
+    lead: "The next trip takes one message.",
+    body: "You write to the agent like a friend. Back comes the whole trip: where to go, how to fly, where to stay, the airport transfer and every day planned. Live prices, and every choice explained.",
+    ask: "warm sea in November, cheap, with a kid",
+    plan: "Plan it",
+    origin: "1 сұрақ means “one question” in Kazakh. We built it for the Ostrovok hackathon, in the One Request track, and it's one of the projects I'm proudest of.",
+    play: "Watch the demo",
+    videoTitle: "1surak demo video",
+    topics: {
+      guide: "Overview",
+      tip: "Things to do",
+      food: "Food",
+      transport: "Getting there",
+      safety: "Safety",
+    },
+    search: {
+      title: ["Inside", "one message"],
+      you: "Your message",
+      passage: "This passage",
+      chips: "Example requests",
+      presets: ["Warm sea", "Street food", "From the airport", "Night walks", "Quiet lake"],
+      count: "{n} of 4",
+      steps: [
+        {
+          title: "Words become numbers",
+          body: "The model turns a message into 384 numbers. These are the real ones, from the same model the app runs.",
+        },
+        {
+          title: "Meaning has an address",
+          body: "641 guidebook passages live in that same space. Similar ideas sit close together, in any language.",
+        },
+        {
+          title: "Two searches meet",
+          body: "One list matches words, the other matches meaning. Reciprocal Rank Fusion merges them, so a passage high in both wins.",
+        },
+        {
+          title: "Now it's yours",
+          body: "This is the search itself, running in your browser. Pick a request, or click any dot to search from it.",
+        },
+      ],
+      mapLabel: "Map of 641 travel passages, projected from 384 dimensions to two",
+      dot: "Search",
+      legend: "Passage topics",
+      byMeaning: "By meaning",
+      byWords: "By words",
+      noWords: "A passage has no words to match. Meaning only.",
+      fused: "Fused result",
+      both: "in both lists",
+      note: "Vectors were computed ahead of time with the app's own model; cosine and fusion run on your device. Word ranking approximates PostgreSQL. Passages: Wikivoyage contributors, CC BY-SA 4.0.",
+    },
+    proof: {
+      title: ["The model decides.", "The code counts."],
+      body: "The agent chooses which of its 13 tools to call. Prices, dates, connections and visas come from deterministic code, and every number in an answer is checked against the tools. A wish like “sea view” only counts with a quote from the source.",
+      figures: [
+        { value: 13, label: "agent tools" },
+        { value: 641, label: "passages in the knowledge base" },
+        { value: 384, label: "dimensions per vector" },
+        { value: 2529, label: "air routes in the graph" },
+        { value: 199, label: "passports in the visa matrix" },
+        { value: 819, label: "automated tests" },
+      ],
+      shots: [
+        { src: "plan", alt: "The trip plan: road, connections and a total in your currency" },
+        { src: "destinations", alt: "Destination cards: weather, sea, a real ticket and the visa" },
+        { src: "hotel", alt: "A hotel in the plan, with wishes confirmed by a quote" },
+        { src: "mobile", alt: "The mobile version, checked at 390 px" },
+      ],
+      stack: [
+        ["Agent", "xAI Grok, 13 tools, NDJSON streaming"],
+        ["Search", "pgvector, PostgreSQL full-text, Reciprocal Rank Fusion"],
+        ["Embeddings", "Multilingual MiniLM, FastEmbed, ONNX on CPU"],
+        ["Routes", "Beam search across 3,531 cities"],
+        ["Stack", "FastAPI, React 19, TypeScript, PostgreSQL 16, Docker"],
+      ],
+      links: [
+        { label: "GitHub", href: "https://github.com/LeonKazaryan/1surak" },
+        { label: "Demo video", href: "https://youtu.be/zqGKsbjdvV0" },
+        { label: "Presentation", href: "https://docs.google.com/presentation/d/1Zu4tg1mgaK1z78YLJ4DHudMT4KULobLlKXw16MtV9Os/edit?usp=sharing" },
+      ],
+    },
+  },
   projects: {
     title: "Also shipped",
     rows: [
+      {
+        name: "1surak",
+        note: "A whole trip in one message: AI agent with hybrid vector search",
+        href: "https://github.com/LeonKazaryan/1surak",
+      },
       {
         name: "Preggo",
         note: "AI pregnancy safety app, Business Cup winner",
@@ -314,7 +402,7 @@ export const en = {
     mailBody: "Hi Leon, I dialled H-I-R-E on your site.",
   },
   footer: {
-    built: "All photographs are my own. Built with Next.js, GSAP, Lenis and WebGL.",
+    built: "All photographs are my own. Built with Next.js, GSAP, Lenis and WebGL. Travel passages in the 1surak demo: Wikivoyage contributors, CC BY-SA 4.0.",
     console: "Open the console",
     hint: "or press the backtick key",
   },
@@ -637,9 +725,96 @@ export const ru: Copy = {
       skyline: "Варшава сверху, 21 мая",
     },
   },
+  surak: {
+    name: "1surak",
+    lead: "Следующая поездка занимает одно сообщение.",
+    body: "Пишете агенту как другу. В ответ получаете готовую поездку: куда ехать, на чём лететь, где жить, как добраться из аэропорта и что делать по дням. Цены живые, каждый выбор объяснён.",
+    ask: "хочу к тёплому морю в ноябре, недорого, с ребёнком",
+    plan: "Спланировать",
+    origin: "«1 сұрақ» по-казахски значит «один вопрос». Мы сделали его на хакатоне Ostrovok, в треке «О!дин запрос», и это один из проектов, которыми я горжусь больше всего.",
+    play: "Смотреть демо",
+    videoTitle: "Демо-видео 1surak",
+    topics: {
+      guide: "Обзор",
+      tip: "Чем заняться",
+      food: "Еда",
+      transport: "Как добраться",
+      safety: "Безопасность",
+    },
+    search: {
+      title: ["Внутри", "одного сообщения"],
+      you: "Ваше сообщение",
+      passage: "Этот отрывок",
+      chips: "Примеры запросов",
+      presets: ["Тёплое море", "Уличная еда", "Из аэропорта", "Ночью одному", "Тихое озеро"],
+      count: "{n} из 4",
+      steps: [
+        {
+          title: "Слова становятся числами",
+          body: "Модель превращает сообщение в 384 числа. Здесь настоящие, от той же модели, что работает в приложении.",
+        },
+        {
+          title: "У смысла есть адрес",
+          body: "641 отрывок из путеводителей лежит в том же пространстве. Похожие мысли стоят рядом, на любом языке.",
+        },
+        {
+          title: "Два поиска встречаются",
+          body: "Один список ищет по словам, другой по смыслу. Reciprocal Rank Fusion сводит их, и выигрывает отрывок, высокий в обоих.",
+        },
+        {
+          title: "Теперь ваша очередь",
+          body: "Это сам поиск, и он работает прямо в вашем браузере. Выберите запрос или нажмите на любую точку.",
+        },
+      ],
+      mapLabel: "Карта из 641 отрывка о путешествиях, спроецированная из 384 измерений в два",
+      dot: "Искать",
+      legend: "Темы отрывков",
+      byMeaning: "По смыслу",
+      byWords: "По словам",
+      noWords: "У отрывка нет слов для сравнения. Только смысл.",
+      fused: "Итог после слияния",
+      both: "в обоих списках",
+      note: "Векторы заранее посчитаны моделью приложения, косинус и слияние работают на вашем устройстве. Ранжирование слов приближает PostgreSQL. Отрывки: авторы Wikivoyage, CC BY-SA 4.0.",
+    },
+    proof: {
+      title: ["Модель решает.", "Код считает."],
+      body: "Агент сам выбирает, какой из 13 инструментов вызвать. Цены, даты, стыковки и визы считает детерминированный код, а числа в ответах сверяются с инструментами. Пожелание вроде «вид на море» засчитывается только с цитатой из источника.",
+      figures: [
+        { value: 13, label: "инструментов агента" },
+        { value: 641, label: "отрывок в базе знаний" },
+        { value: 384, label: "измерения у вектора" },
+        { value: 2529, label: "авиамаршрутов в графе" },
+        { value: 199, label: "паспортов в матрице виз" },
+        { value: 819, label: "автотестов" },
+      ],
+      shots: [
+        { src: "plan", alt: "План поездки: дорога, стыковки и итог в вашей валюте" },
+        { src: "destinations", alt: "Карточки направлений: погода, море, настоящий билет и виза" },
+        { src: "hotel", alt: "Отель в плане: пожелания подтверждены цитатой" },
+        { src: "mobile", alt: "Мобильная версия, проверена на 390 px" },
+      ],
+      stack: [
+        ["Агент", "xAI Grok, 13 инструментов, потоковый NDJSON"],
+        ["Поиск", "pgvector, полнотекстовый поиск PostgreSQL, Reciprocal Rank Fusion"],
+        ["Эмбеддинги", "Многоязычная MiniLM, FastEmbed, ONNX на CPU"],
+        ["Маршруты", "Beam search по 3 531 городу"],
+        ["Стек", "FastAPI, React 19, TypeScript, PostgreSQL 16, Docker"],
+      ],
+      links: [
+        { label: "GitHub", href: "https://github.com/LeonKazaryan/1surak" },
+        { label: "Демо-видео", href: "https://youtu.be/zqGKsbjdvV0" },
+        { label: "Презентация", href: "https://docs.google.com/presentation/d/1Zu4tg1mgaK1z78YLJ4DHudMT4KULobLlKXw16MtV9Os/edit?usp=sharing" },
+      ],
+    },
+  },
   projects: {
     title: "Ещё проекты",
     rows: [
+      {
+        name: "1surak",
+        note: "Вся поездка в одном сообщении: ИИ-агент с гибридным векторным поиском",
+        href: "https://github.com/LeonKazaryan/1surak",
+      },
       {
         name: "Preggo",
         note: "ИИ-приложение для безопасной беременности, победитель Business Cup",
@@ -709,7 +884,7 @@ export const ru: Copy = {
     mailBody: "Привет, Леон! Я набрал H-I-R-E на твоём сайте.",
   },
   footer: {
-    built: "Все фотографии мои. Сделано на Next.js, GSAP, Lenis и WebGL.",
+    built: "Все фотографии мои. Сделано на Next.js, GSAP, Lenis и WebGL. Отрывки в демо 1surak: авторы Wikivoyage, CC BY-SA 4.0.",
     console: "Открыть консоль",
     hint: "или нажмите клавишу ё",
   },

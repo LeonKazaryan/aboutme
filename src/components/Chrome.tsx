@@ -188,20 +188,20 @@ export function Boot() {
       } catch {}
       gsap.to(el, {
         yPercent: -100,
-        duration: 0.5,
+        duration: 0.36,
         ease: "power3.inOut",
         onComplete: () => setGone(true),
       });
     };
 
-    gsap.to(lines, { autoAlpha: 1, duration: 0.01, stagger: 0.13 });
+    gsap.to(lines, { autoAlpha: 1, duration: 0.01, stagger: 0.1 });
     const ready = Promise.race([
       document.fonts.ready,
       new Promise((done) => setTimeout(done, 900)),
     ]);
     let cancelled = false;
     ready.then(() => {
-      const left = Math.max(0, 880 - (performance.now() - started));
+      const left = Math.max(0, 680 - (performance.now() - started));
       setTimeout(() => {
         if (!cancelled) finish();
       }, left);

@@ -9,6 +9,7 @@ import { HackNU } from "./HackNU";
 import { Hero } from "./Hero";
 import { Incubator } from "./Incubator";
 import { School, University } from "./School";
+import { Surak } from "./Surak";
 import { Terminal } from "./Terminal";
 import { Warsaw } from "./Warsaw";
 import { Work } from "./Work";
@@ -103,6 +104,7 @@ export function Experience() {
         <HackNU />
         <Zimran />
         <Warsaw />
+        <Surak />
         <Projects />
         <Contact />
       </main>
